@@ -1,0 +1,26 @@
+procedure Random_Abiss;
+var
+  c, d, north: integer;
+begin
+  c := 0;
+  d := 0;
+  north := 0;
+  if PercentBlackMM < 75 then
+    exit;
+  writeln('Random Found: Abiss Attempting to Solve');
+  makeCompass('n');
+  setAngle(SRL_ANGLE_LOW);
+  MMouse(250, 106, 5, 5);
+  makeCompass(rs_getcompassangledegrees + 10);
+  wait(50);
+  if IsUpTextMultiCustom(['Operate', 'Appendage']) then
+  begin
+  north = BitmapFromClient(247, 103, 253, 106);
+    repeat
+      inc(d);
+      if IsUpTextMultiCustom(['Operate', 'Appendage']) then
+        clickmouse2(mouse_left);
+      wait(700);
+    until (PercentBlackMM < 75) or (d > 15);
+  end;
+end;
