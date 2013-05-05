@@ -1,10 +1,10 @@
 procedure Random_Abiss;
 var
-  c, d, north: integer;
+  c, d, northBitmap: integer;
 begin
   c := 0;
   d := 0;
-  north := 0;
+  northBitmap := 0;
   if PercentBlackMM < 75 then
     exit;
   writeln('Random Found: Abiss Attempting to Solve');
@@ -15,7 +15,7 @@ begin
   Wait(50);
   if IsUpTextMultiCustom(['Operate', 'Appendage']) then
   begin
-  north = BitmapFromClient(247, 103, 253, 106);
+  northBitmap = BitmapFromClient(247, 103, 253, 106);
     repeat
       Inc(d);
       if IsUpTextMultiCustom(['Operate', 'Appendage']) then
